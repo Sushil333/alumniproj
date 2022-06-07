@@ -54,7 +54,6 @@ def verify_otp(request):
         return render(request, 'registration/verify_otp.html', {"form": form})
     else:
         email = request.session.get('email')
-        print(email)
         if email is None:
             messages.error(request, message="Something went wrong! Plese try again.")
             return redirect('send_otp')
